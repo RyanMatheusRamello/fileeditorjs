@@ -11,7 +11,13 @@ Entre no seu terminal e digite:
 git clone https://github.com/RyanmatheusRamello/fileeditorjs editorfolder
 ```
 
-Acesse a pasta `editorfolder` e pode iniciar o editor com
+Acesse a pasta `editorfolder` e instale as dependências
+
+```
+npm install
+```
+
+depois pode iniciar o editor com
 
 ```
 npm start
