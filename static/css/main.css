@@ -1,0 +1,333 @@
+@import url(https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css);
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap);
+
+body {
+    height: 100vh;
+    background-color: #282c34;
+    font-family: sans-serif;
+    display: flex;
+}
+
+.loader-div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.aligner {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	width: 100%;
+}
+
+.steam-container {
+	width: 60px;
+	height: 50px;
+	margin-left: 10px;
+}
+
+.coffee-container {
+	width: 100px;
+	height: 100px;
+	position: relative;
+}
+
+.coffee-cup {
+	width: 80px;
+}
+
+.squiggle-container {
+	width: 10px;
+	height: 30px;
+	display: inline-block;
+}
+
+.squiggle-container-1 {
+	transform: translateY(10px);
+}
+
+.squiggle-container-1 .squiggle {
+	animation: move-and-fade 2.5s linear infinite;
+	animation-delay: 0.2s;
+	width: 10px;
+}
+
+@keyframes move-and-fade {
+	0% {
+		opacity: 0;
+		transform: translateY(0);
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	75% {
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateY(-10px);
+		opacity: 0;
+	}
+}
+
+.squiggle-container-2 {
+	transform: translateY(0px);
+}
+
+.squiggle-container-2 .squiggle {
+	animation: move-and-fade 2.5s linear infinite;
+	animation-delay: 0s;
+	width: 10px;
+}
+
+@keyframes move-and-fade {
+	0% {
+		opacity: 0;
+		transform: translateY(0);
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	75% {
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateY(-20px);
+		opacity: 0;
+	}
+}
+
+.squiggle-container-3 {
+	transform: translateY(15px);
+}
+
+.squiggle-container-3 .squiggle {
+	animation: move-and-fade 2.5s linear infinite;
+	animation-delay: 0.4s;
+	width: 10px;
+}
+
+@keyframes move-and-fade {
+	0% {
+		opacity: 0;
+		transform: translateY(0);
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	75% {
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateY(-15px);
+		opacity: 0;
+	}
+}
+
+.squiggle {
+	stroke-dasharray: 100;
+}
+
+.squiggle path {
+	stroke: #5D5D5D;
+}
+
+@keyframes dash {
+	0% {
+		stroke-dashoffset: 1000;
+	}
+
+	50% {
+		stroke-dashoffset: 500;
+	}
+
+	100% {
+		stroke-dashoffset: 0;
+	}
+}
+
+/* STYLES */
+.folder_files {
+
+    width: 250px;
+    min-height: 100vh;
+    background-color: #21252b;
+    display: inline-block;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+}
+.folder_files:hover { 
+    overflow-y: auto;
+}
+.folder_files::-webkit-scrollbar {
+    width: 12px;
+}
+.folder_files::-webkit-scrollbar-thumb {
+    background: #3d434f;
+}
+.ace_scrollbar-v::-webkit-scrollbar {
+    width: 18px;
+}
+.ace_scrollbar-v::-webkit-scrollbar-thumb {
+    background: #3d434f;
+}
+.ace_scrollbar-h::-webkit-scrollbar {
+    width: 18px;
+}
+.ace_scrollbar-h::-webkit-scrollbar-thumb {
+    background: #3d434f;
+}
+.folder_file_filho {
+
+    color: #fefefe;
+    height: 25px;
+    font-size: 13px;
+    cursor: pointer;
+    line-height: 25px;
+    white-space: nowrap;
+
+}
+
+.folder_file_filho.active {
+    background: #2c313a;
+}
+
+.folder_file_filho:hover {
+    background: #292d35;
+}
+
+.folder_file_icon {
+    display: inline-block;
+    width: 20px;
+}
+
+.folder_file_icon i {
+    color: #606267;
+    display: inline-block;
+    line-height: 25px;
+}
+
+.editor_div {
+    display: inline-block;
+    width: calc(100% - 250px);
+}
+
+.element-content-center {
+    text-align: center;
+    color: #606267;
+    height: calc(100vh - 35px);
+    padding-top: calc(50vh - 55px);
+}
+
+.element-content-center i {
+    font-size: 50px;
+}
+
+.tab_files_editor_div {
+    width: 100%;
+    height: 35px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #21252b;
+    color: #666;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.tab_files_editor_item {
+    display: inline-flex;
+    height: 35px;
+    width: auto;
+    min-width: 150px;
+    max-width: 350px;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden !important;
+    background-color: #21242D;
+}
+.tab_files_editor_item.active {
+    background-color: #383e4a;
+    color: #dedede;
+}
+
+.tab_files_editor_item_close {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.tab_files_editor_item_close:hover {
+    background-color: #32363a;
+}
+
+.p-absolute {
+    position: absolute;
+    top: 38px;
+    left: 250px;
+    right: 0;
+    bottom: 0;
+}
+
+.tab-editor-name {
+    overflow: hidden !important;
+    max-width: 270px;
+    display: inline-flex;
+}
+
+.folder_file_name {
+    white-space: nowrap;
+    overflow: hidden !important;
+    height: 25px;
+}
+.config-tab {
+    width: 250px;
+    height: 35px;
+    border-right: solid 3px #111;
+    background-color: #21252b;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 5px;
+}
+.tab_files_editor_item + .tab_files_editor_item {
+    border-left: solid 3px #21252b;
+}
+.config-tab .config-item {
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #dedede;
+    cursor: pointer;
+}
+.config-tab .config-item:hover {
+    background-color: #1b1c1f;
+}
+.context_attr {
+    color: #fefefe;
+    padding: 1px 15px;
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.context_attr:hover {
+    background-color: #2c313a;
+}

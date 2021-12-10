@@ -1,0 +1,9 @@
+{
+    "id": 1,
+    "username": "ryanmath",
+    "password": "ryan123",
+    "preferences": {
+        "theme": "dracula",
+        "fontsize": "15"
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "secretSession": "secret-session",
+    "useSSL": true,
+    "port": 8081,
+    "domain": false,
+    "ssl": {
+        "cert": "ssl/server.crt",
+        "key": "ssl/server.key",
+        "port": 8080
+    }
+}
