@@ -23,6 +23,15 @@ depois pode iniciar o editor com
 npm start
 ````
 
+#
+## Pasta de inicio
+
+utilize ?folder na url do editor
+
+```
+https://localhost:8081/?folder=/home
+```
+
 # 
 ## Configurações
 
