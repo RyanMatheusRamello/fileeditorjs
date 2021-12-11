@@ -885,6 +885,8 @@ async function loadFolder(_this){
         return false;
     }
     let files = response.data;
+    files.folder.reverse();
+    files.file.reverse();
     for(let item of files.folder){
         rid = "fc_"+RandomString();
         let filho = $(document.createElement("div"));
