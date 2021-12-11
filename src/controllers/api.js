@@ -150,7 +150,7 @@ module.exports.setContent = (app, req, res) => {
 
         if(!req.body.file) throw new Error("Não definido o arquivo que você quer alterar o conteudo");
         if(typeof req.body.file !== "string") throw new Error("Parametro file deve ser uma string");
-        if(!req.body.content) throw new Error("Não definido o conteudo do arquivo");
+        if(!req.body.content) req.body.content = "";
         if(typeof req.body.content !== "string") throw new Error("Parametro content deve ser uma string");
         const folder_str = req.body.file.replace(/\.\.[\/\\]/gm, '');
         if(folder_str == ""){
