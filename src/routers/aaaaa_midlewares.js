@@ -9,7 +9,7 @@ module.exports = (app) => {
         cookie: { sameSite: true }
     };
 
-    if(app.config.useSSL){
+    if(app.config.useSSL && !app.config.ssl.port){
         sess.cookie.secure = true;
     }
 
