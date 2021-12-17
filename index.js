@@ -1,13 +1,11 @@
 const express = require('express');
 const consign = require('consign');
-const cons = require('consolidate');
 const { join } = require('path');
 const bodyParser = require('body-parser');
 const fs = require('fs');
 
 const app = express();
 
-app.engine('twig', cons.twing);
 app.set('view engine', 'twig');
 app.set('views', join(process.cwd(), "./src/views"))
 
@@ -27,9 +25,6 @@ let args = [app.config.port];
 if(app.config.domain){
   args.push(app.config.domain);
 }
-args.push(() => {
-  console.log("Servidor rodando");
-});
 if(app.config.useSSL){
   const https = require('https');
   let certificate = fs.readFileSync(app.config.ssl.cert, 'utf8');
@@ -39,12 +34,19 @@ if(app.config.useSSL){
     const http = require('http');
     let httpServer = http.createServer(app);
     let httpsServer = https.createServer(credentials, app);
-    httpServer.listen(...args);
+	const httpPort = args[0]
+    httpServer.listen(...args, () => {
+		console.log("Servidor http rodando na porta " + httpPort);
+	});
     args[0] = app.config.ssl.port;
-    httpsServer.listen(...args);
+    httpsServer.listen(...args, () => {
+		console.log("Servidor https rodando na porta " + args[0]);
+	});
   }else{
     let httpsServer = https.createServer(credentials, app);
-    httpsServer.listen(...args);
+    httpsServer.listen(...args, () => {
+		console.log("Servidor http rodando na porta " + args[0]);
+	});
   }
 }else{
   app.listen(...args);
